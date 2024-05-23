@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/icon (2).ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/all.min.css" />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>BookMarker</title>
+  </head>
+  <body>
+    <main>
+      <div
+        class="container d-flex flex-column justify-content-center align-items-center"
+      >
+        <h1 class="position-relative mt-5 px-1">Bookmarker</h1>
+        <div class="dash-line m-5 w-100"></div>
+        <div
+          class="bookmark-form w-100 d-flex flex-column justify-content-center align-items-center"
+        >
+          <div class="text-center mb-4 text-bgg">
+            <h2 class="fs-3">
+              <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+              <i class="fa-solid fa-bookmark"></i>
+            </h2>
+          </div>
+          <div class="mb-4 w-100">
+            <label for="siteName" class="form-label">
+              <i class="fa-solid fa-book ms-3 me-1 my-1"></i> Site Name</label
+            >
+            <input
+              oninput="validateInputs(this)"
+              type="text"
+              class="form-control"
+              id="siteName"
+              placeholder="Bookmark Name"
+            />
+          </div>
+          <div class="mb-3 w-100">
+            <label for="siteUrl" class="form-label"
+              ><i class="fa-solid fa-link ms-3 me-1 my-1"></i> Site URL</label
+            >
+            <input
+              oninput="validateInputs(this)"
+              type="text"
+              class="form-control"
+              id="siteUrl"
+              placeholder="Website URL"
+            />
+          </div>
+          <button
+            id="liveToastBtn"
+            class="btn butn px-5 py-2 my-2"
+            onclick="addBookmark()"
+          >
+            Submit
+          </button>
+          <div class="dash-line mt-3 mb-4 w-100"></div>
+
+          <table class="table mt-2 mb-4">
+            <thead>
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider" id="table-body"></tbody>
+          </table>
+
+          <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div
+              id="liveToast"
+              class="toast hide"
+              role="alert"
+              aria-live="assertive"
+              aria-atomic="true"
+            >
+              <div class="toast-header">
+                <strong class="me-auto"
+                  ><i class="fa-solid fa-circle c1"></i>
+                  <i class="fa-solid fa-circle c2"></i>
+                  <i class="fa-solid fa-circle c3"></i
+                ></strong>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="toast"
+                  aria-label="Close"
+                  onclick="closeToast()"
+                ></button>
+              </div>
+              <div class="toast-body">
+                <p class="fw-bold fs-6">
+                  Site Name or Url is not valid, Please follow the rules below :
+                </p>
+                <p>
+                  <i class="fa-regular fa-circle-right c1 pe-1"></i> Site name
+                  must contain at least 3 characters
+                </p>
+                <p>
+                  <i class="fa-regular fa-circle-right c1 pe-1"></i> Site URL
+                  must be a valid one
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: black;
+}
+body {
+  scroll-behavior: smooth;
+  scroll-padding-top: 37.6px;
+  background-color: #f7ecde;
+}
+
+::selection {
+  background-color: #a6711a;
+  color: white;
+}
+h1 {
+  font-family: Pacifico;
+  font-size: 50px;
+  letter-spacing: 1px;
+}
+h1::before {
+  content: "";
+  position: absolute;
+  background-color: #a6711a;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 65%;
+  z-index: -1;
+  transition: all 0.5s;
+}
+h1:hover::before {
+  top: 35%;
+}
+
+.dash-line {
+  border-bottom: dashed 1px black;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #a6711a;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #fec26055;
+}
+.text-bgg {
+  font-family: Righteous;
+  background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+  background-clip: text;
+  color: transparent;
+}
+.butn:hover {
+  background-color: #e3a512;
+  color: white;
+}
+.butn {
+  font-size: 1.1rem;
+  background-color: #e3a512;
+  color: white;
+  transition: all 0.5s;
+}
+.table {
+  text-indent: 10%;
+  text-align: center;
+  vertical-align: middle;
+}
+td {
+  padding: 0.5rem 0.5rem;
+}
+.c1 {
+  color: #f15f5d;
+}
+.c2 {
+  color: #febe2e;
+}
+.c3 {
+  color: #31882d7c;
+}
+.box-content {
+  font-family: BreeSerif;
+}
+.display-none-rev{
+  display: block !important;
+}
+@font-face {
+  font-family: Righteous;
+  src: url(../fonts/Righteous-Regular.ttf);
+}
+@font-face {
+  font-family: Pacifico;
+  src: url(../fonts/Pacifico.ttf);
+}
+@font-face {
+  font-family: BreeSerif;
+  src: url(../fonts/BreeSerif-Regular.ttf);
+}
